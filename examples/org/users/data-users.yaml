@@ -1,0 +1,37 @@
+# Data Team Users
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: maria.data
+  description: Data Engineer
+spec:
+  profile:
+    displayName: Maria Garcia
+    email: maria.garcia@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/maria.svg
+  memberOf: [data-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: nathan.data
+  description: Data Scientist
+spec:
+  profile:
+    displayName: Nathan Drake
+    email: nathan.drake@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/nathan.svg
+  memberOf: [data-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: olivia.data
+  description: Analytics Engineer
+spec:
+  profile:
+    displayName: Olivia Pope
+    email: olivia.pope@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/olivia.svg
+  memberOf: [data-team, backend-team]

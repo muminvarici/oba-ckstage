@@ -15,6 +15,7 @@ Bu dokümantasyon, enterprise Backstage platformunun geliştirilmesi için gerek
 ## ✅ Tamamlanan Görevler
 
 ### 1. ✓ TODO Listesi ve Roadmap Oluşturma
+
 - **Durum:** TAMAMLANDI
 - **Açıklama:** Tüm gereksinimlerin detaylı analizi ve dokümantasyonu
 - **Commit:** Initial roadmap and TODO list creation
@@ -31,9 +32,10 @@ _(Şu anda devam eden görev yok)_
 ## 📝 Yapılacak Görevler
 
 ### 2. GitHub Authentication Konfigürasyonu
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
-- **Açıklama:** 
+- **Açıklama:**
   - Mevcut GitHub OAuth yapılandırmasının kontrolü
   - `app-config.yaml` dosyasındaki auth ayarlarının doğrulanması
   - GitHub OAuth App credentials kontrolü
@@ -45,6 +47,7 @@ _(Şu anda devam eden görev yok)_
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 
 ### 3. .NET Proje Template'i Ekleme
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** ORTA
 - **Açıklama:**
@@ -59,6 +62,7 @@ _(Şu anda devam eden görev yok)_
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 
 ### 4. Örnek Veri Setini Genişletme
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** ORTA
 - **Açıklama:**
@@ -76,6 +80,7 @@ _(Şu anda devam eden görev yok)_
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 
 ### 5. TechDocs Plugin Entegrasyonu
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
 - **Açıklama:**
@@ -91,6 +96,7 @@ _(Şu anda devam eden görev yok)_
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 
 ### 6. Kubernetes Plugin (Rancher/Google Anthos)
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
 - **Açıklama:**
@@ -107,6 +113,7 @@ _(Şu anda devam eden görev yok)_
 - **Not:** Rancher ve Anthos API credentials gerekli
 
 ### 7. ArgoCD Plugin Entegrasyonu
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
 - **Açıklama:**
@@ -122,6 +129,7 @@ _(Şu anda devam eden görev yok)_
 - **Not:** ArgoCD server URL ve authentication token gerekli
 
 ### 8. GitHub Actions Plugin
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
 - **Açıklama:**
@@ -137,6 +145,7 @@ _(Şu anda devam eden görev yok)_
 - **Not:** GitHub Personal Access Token (repo ve workflow yetkileri)
 
 ### 9. Apicurio Entegrasyonu
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** ORTA
 - **Açıklama:**
@@ -152,6 +161,7 @@ _(Şu anda devam eden görev yok)_
 - **Not:** Backstage için hazır Apicurio plugin bulunmamaktadır. Custom plugin veya adapter geliştirme gerekir.
 
 ### 10. Grafana Plugin Aktivasyonu
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
 - **Açıklama:**
@@ -167,6 +177,7 @@ _(Şu anda devam eden görev yok)_
 - **Not:** Grafana API key veya service account token gerekli
 
 ### 11. gRPC Proto Dosyaları Görüntüleme
+
 - **Durum:** BEKLEMEDE
 - **Öncelik:** DÜŞÜK
 - **Açıklama:**
@@ -189,6 +200,7 @@ _(Şu anda devam eden görev yok)_
 ### ⚠️ Özel Geliştirme Gerektirenler:
 
 1. **Apicurio Entegrasyonu (Görev #9)**
+
    - Backstage ekosisteminde hazır Apicurio plugin bulunmamaktadır
    - **Çözüm Önerileri:**
      - Custom Backstage plugin geliştirme
@@ -219,6 +231,7 @@ _(Şu anda devam eden görev yok)_
 ## 📦 Bağımlılıklar ve Önkoşullar
 
 ### External Services:
+
 - GitHub (OAuth App, Personal Access Token)
 - Kubernetes Cluster (Rancher/Anthos credentials)
 - ArgoCD Server (API URL, Auth Token)
@@ -226,6 +239,7 @@ _(Şu anda devam eden görev yok)_
 - Apicurio Registry (opsiyonel, eğer kullanılacaksa)
 
 ### Development Tools:
+
 - Node.js (v18+)
 - Yarn (v1.22+)
 - Git

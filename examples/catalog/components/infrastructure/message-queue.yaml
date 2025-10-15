@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: message-queue
+  description: RabbitMQ message broker for asynchronous communication
+  tags:
+    - infrastructure
+    - messaging
+    - rabbitmq
+spec:
+  type: message-broker
+  lifecycle: production
+  owner: platform-team
+  system: examples

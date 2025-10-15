@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-website
+  description: Main marketing and customer-facing website
+  annotations:
+    github.com/project-slug: example-org/example-website
+  tags:
+    - frontend
+    - web
+    - marketing
+    - nextjs
+  links:
+    - url: https://github.com/example-org/example-website
+      title: GitHub Repository
+      icon: github
+    - url: https://example.com
+      title: Production URL
+      icon: web
+spec:
+  type: website
+  lifecycle: production
+  owner: frontend-team
+  system: examples
+  providesApis:
+    - example-grpc-api

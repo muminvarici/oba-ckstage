@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: examples
+  description: Example system for demonstration purposes
+  tags:
+    - demo
+    - examples
+spec:
+  owner: platform-team
+  domain: platform

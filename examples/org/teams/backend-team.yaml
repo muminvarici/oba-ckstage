@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: backend-team
+  description: Backend development team responsible for microservices
+  tags:
+    - backend
+    - development
+spec:
+  type: team
+  profile:
+    displayName: Backend Team
+    email: backend-team@company.com
+    picture: https://avatars.dicebear.com/api/identicon/backend-team.svg
+  children: []

@@ -27,6 +27,7 @@ dotnet run
 ```
 
 The API will be available at:
+
 - HTTP: `http://localhost:5000`
 - HTTPS: `https://localhost:5001`
 
@@ -105,6 +106,7 @@ dotnet publish -c Release -o ./publish
 ## Deployment
 
 This service is configured for deployment with:
+
 - GitHub Actions CI/CD
 - Docker containerization
 - Kubernetes/ArgoCD deployment

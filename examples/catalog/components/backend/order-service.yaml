@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: order-service
+  description: Order processing and management service
+  annotations:
+    github.com/project-slug: example-org/order-service
+  tags:
+    - backend
+    - microservice
+    - dotnet
+    - rest-api
+  links:
+    - url: https://github.com/example-org/order-service
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: production
+  owner: backend-team
+  system: examples
+  providesApis:
+    - order-api
+  consumesApis:
+    - user-api

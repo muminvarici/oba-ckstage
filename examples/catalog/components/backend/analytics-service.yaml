@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: analytics-service
+  description: Data analytics and reporting service
+  annotations:
+    github.com/project-slug: example-org/analytics-service
+  tags:
+    - backend
+    - analytics
+    - python
+    - data-science
+  links:
+    - url: https://github.com/example-org/analytics-service
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: data-team
+  system: examples
+  providesApis:
+    - analytics-api
+  dependsOn:
+    - resource:database-cluster

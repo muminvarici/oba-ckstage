@@ -96,27 +96,19 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location, Domain, Group, User]
   locations:
-    # Local example data, file locations are relative to the backend process, typically `packages/backend`
+    # Catalog - All components, APIs, systems
     - type: file
-      target: ../../examples/entities.yaml
+      target: ../../examples/catalog/all.yaml
 
-    # Local example template
+    # Organization - All teams and users
     - type: file
-      target: ../../examples/template/template.yaml
+      target: ../../examples/org/all.yaml
+
+    # Templates - All software templates
+    - type: file
+      target: ../../examples/template/all.yaml
       rules:
         - allow: [Template]
-
-    # .NET Web API Template
-    - type: file
-      target: ../../examples/template/dotnet-webapi/template.yaml
-      rules:
-        - allow: [Template]
-
-    # Local example organizational data
-    - type: file
-      target: ../../examples/org.yaml
-      rules:
-        - allow: [User, Group]
 
     ## Uncomment these lines to add more example data
     # - type: url

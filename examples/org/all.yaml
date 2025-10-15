@@ -1,0 +1,29 @@
+# Organization All - Import all teams and users
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-teams
+  description: All teams
+spec:
+  type: file
+  targets:
+    - ./teams/backend-team.yaml
+    - ./teams/frontend-team.yaml
+    - ./teams/platform-team.yaml
+    - ./teams/mobile-team.yaml
+    - ./teams/data-team.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-users
+  description: All users
+spec:
+  type: file
+  targets:
+    - ./users/backend-users.yaml
+    - ./users/frontend-users.yaml
+    - ./users/platform-users.yaml
+    - ./users/mobile-users.yaml
+    - ./users/data-users.yaml

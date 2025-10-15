@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: api-gateway
+  description: API Gateway for routing, authentication, and rate limiting
+  annotations:
+    github.com/project-slug: example-org/api-gateway
+  tags:
+    - infrastructure
+    - gateway
+    - nginx
+    - security
+  links:
+    - url: https://github.com/example-org/api-gateway
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: examples
+  dependsOn:
+    - component:user-service
+    - component:order-service
+    - component:payment-service

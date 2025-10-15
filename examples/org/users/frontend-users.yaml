@@ -1,0 +1,37 @@
+# Frontend Team Users
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: diana.frontend
+  description: Senior Frontend Developer
+spec:
+  profile:
+    displayName: Diana Prince
+    email: diana.prince@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/diana.svg
+  memberOf: [frontend-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: eve.frontend
+  description: Frontend Developer
+spec:
+  profile:
+    displayName: Eve Williams
+    email: eve.williams@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/eve.svg
+  memberOf: [frontend-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: frank.frontend
+  description: UI/UX Developer
+spec:
+  profile:
+    displayName: Frank Miller
+    email: frank.miller@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/frank.svg
+  memberOf: [frontend-team, mobile-team]
