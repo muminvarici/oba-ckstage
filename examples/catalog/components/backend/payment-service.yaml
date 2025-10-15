@@ -5,6 +5,7 @@ metadata:
   description: Payment processing service with PCI compliance
   annotations:
     github.com/project-slug: example-org/payment-service
+    backstage.io/techdocs-ref: dir:./docs/payment-service
   tags:
     - backend
     - microservice

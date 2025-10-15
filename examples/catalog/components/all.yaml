@@ -1,0 +1,32 @@
+# Components - All application components
+# This file aggregates components from backend, frontend, and infrastructure
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-backend-components
+  description: All backend microservices
+spec:
+  type: file
+  targets:
+    - ./backend/all.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-frontend-components
+  description: All frontend applications
+spec:
+  type: file
+  targets:
+    - ./frontend/all.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-infrastructure-components
+  description: All infrastructure resources
+spec:
+  type: file
+  targets:
+    - ./infrastructure/all.yaml

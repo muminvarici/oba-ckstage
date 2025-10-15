@@ -5,6 +5,7 @@ metadata:
   description: Order processing and management service
   annotations:
     github.com/project-slug: example-org/order-service
+    backstage.io/techdocs-ref: dir:./docs/order-service
   tags:
     - backend
     - microservice

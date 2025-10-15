@@ -5,6 +5,7 @@ metadata:
   description: Email and SMS notification service
   annotations:
     github.com/project-slug: example-org/notification-service
+    backstage.io/techdocs-ref: dir:./docs/notification-service
   tags:
     - backend
     - microservice

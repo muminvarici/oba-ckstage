@@ -1,0 +1,12 @@
+# Systems - All system definitions
+# This file aggregates all system definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: system-examples
+  description: Example e-commerce platform system
+spec:
+  type: file
+  targets:
+    - ./examples-system.yaml

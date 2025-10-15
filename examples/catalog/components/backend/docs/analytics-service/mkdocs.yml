@@ -1,0 +1,19 @@
+site_name: 'Analytics Service'
+site_description: 'Data analytics and reporting platform'
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Data Pipeline:
+      - Ingestion: pipeline/ingestion.md
+      - Processing: pipeline/processing.md
+      - Storage: pipeline/storage.md
+  - Analytics:
+      - Real-time: analytics/realtime.md
+      - Batch: analytics/batch.md
+      - ML Models: analytics/ml.md
+  - Dashboards: dashboards.md
+  - Data Catalog: data-catalog.md
+
+plugins:
+  - techdocs-core

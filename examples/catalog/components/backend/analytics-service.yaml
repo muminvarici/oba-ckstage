@@ -5,6 +5,7 @@ metadata:
   description: Data analytics and reporting service
   annotations:
     github.com/project-slug: example-org/analytics-service
+    backstage.io/techdocs-ref: dir:./docs/analytics-service
   tags:
     - backend
     - analytics

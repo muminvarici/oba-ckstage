@@ -8,45 +8,17 @@ metadata:
 spec:
   type: file
   targets:
-    - ./systems/examples-system.yaml
+    - ./systems/all.yaml
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: example-backend-components
-  description: All backend components
+  name: example-all-components
+  description: All components (backend, frontend, infrastructure)
 spec:
   type: file
   targets:
-    - ./components/backend/user-service.yaml
-    - ./components/backend/order-service.yaml
-    - ./components/backend/payment-service.yaml
-    - ./components/backend/notification-service.yaml
-    - ./components/backend/analytics-service.yaml
----
-apiVersion: backstage.io/v1alpha1
-kind: Location
-metadata:
-  name: example-frontend-components
-  description: All frontend components
-spec:
-  type: file
-  targets:
-    - ./components/frontend/mobile-app.yaml
-    - ./components/frontend/admin-dashboard.yaml
-    - ./components/frontend/example-website.yaml
----
-apiVersion: backstage.io/v1alpha1
-kind: Location
-metadata:
-  name: example-infrastructure-components
-  description: All infrastructure components
-spec:
-  type: file
-  targets:
-    - ./components/infrastructure/api-gateway.yaml
-    - ./components/infrastructure/message-queue.yaml
-    - ./components/infrastructure/database-cluster.yaml
+    - ./components/all.yaml
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Location
@@ -56,8 +28,4 @@ metadata:
 spec:
   type: file
   targets:
-    - ./apis/user-api.yaml
-    - ./apis/order-api.yaml
-    - ./apis/payment-api.yaml
-    - ./apis/analytics-api.yaml
-    - ./apis/example-grpc-api.yaml
+    - ./apis/all.yaml

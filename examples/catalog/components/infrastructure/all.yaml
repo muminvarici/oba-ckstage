@@ -1,0 +1,32 @@
+# Infrastructure Components - All infrastructure resources
+# This file aggregates all infrastructure component definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: infrastructure-api-gateway
+  description: API Gateway for microservices routing
+spec:
+  type: file
+  targets:
+    - ./api-gateway.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: infrastructure-message-queue
+  description: RabbitMQ message queue for async communication
+spec:
+  type: file
+  targets:
+    - ./message-queue.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: infrastructure-database-cluster
+  description: PostgreSQL database cluster
+spec:
+  type: file
+  targets:
+    - ./database-cluster.yaml
