@@ -30,7 +30,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: mvarici_archi
+  # name: mvarici_archi
+  name: mumin.varici@architecht.com
   description: OBA Ekibi Üyesi
 spec:
   profile:

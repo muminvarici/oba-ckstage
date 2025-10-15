@@ -24,20 +24,18 @@ export default createBackendModule({
             authenticator: githubAuthenticator,
             async signInResolver(info, ctx) {
               const { profile } = info;
-              console.log('GitHub profile:', profile);
-              // Use GitHub username for matching catalog entities
-              // GitHub usernames are stable and unique
-              const username =
-                (profile as any).username || profile.email?.split('@')[0];
 
-              if (!username) {
+              const userInfo =
+                profile.displayName || profile.email?.split('@')[0];
+
+              if (!userInfo) {
                 throw new Error('GitHub profile does not contain a username');
               }
 
               // Create a user entity reference from the GitHub username (lowercase)
               const userEntityRef = stringifyEntityRef({
                 kind: 'User',
-                name: username.toLowerCase(),
+                name: userInfo,
                 namespace: DEFAULT_NAMESPACE,
               });
 
@@ -45,6 +43,9 @@ export default createBackendModule({
                 claims: {
                   sub: userEntityRef,
                   ent: [userEntityRef],
+                  name: userInfo,
+                  email: profile.email!,
+                  avatar: profile.picture ?? '<default_avatar_url>',
                 },
               });
             },
