@@ -12,6 +12,18 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
+  auth:
+    providers:
+      github:
+        development:
+          clientId: ${GITHUB_CLIENT_ID}
+          clientSecret: ${GITHUB_CLIENT_SECRET}
+          signIn:
+            resolvers:
+              # Allows any GitHub user to sign in
+              # Creates a user identity based on GitHub username
+              - resolver: usernameMatchingUserEntityName
+
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -67,6 +79,10 @@ auth:
   providers:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
+    github:
+      development:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
