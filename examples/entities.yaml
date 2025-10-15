@@ -39,3 +39,19 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+---
+# .NET Web API Template
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: dotnet-webapi-template
+  title: .NET Core Web API Template
+  description: Create a new .NET Core Web API project with best practices
+  tags:
+    - dotnet
+    - csharp
+    - webapi
+    - recommended
+spec:
+  owner: guests
+  type: service

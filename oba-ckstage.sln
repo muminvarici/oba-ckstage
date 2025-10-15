@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "template", "template", "{78BCD21F-B070-13B8-9079-D28331E56712}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet-webapi", "dotnet-webapi", "{4EF48BF3-2960-A5E1-B9FB-F3F01C4B2CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "${{ values.name }}", "examples\template\dotnet-webapi\content\${{ values.name }}.csproj", "{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78BCD21F-B070-13B8-9079-D28331E56712} = {B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}
+		{4EF48BF3-2960-A5E1-B9FB-F3F01C4B2CE6} = {78BCD21F-B070-13B8-9079-D28331E56712}
+		{DAC533DA-8ADB-3852-3FA7-C0A7A5D027EC} = {4EF48BF3-2960-A5E1-B9FB-F3F01C4B2CE6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6794CDC-7148-4BA7-ACA1-16DC186CD66E}
+	EndGlobalSection
+EndGlobal

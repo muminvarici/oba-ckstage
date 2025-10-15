@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | lower }}
+  description: ${{ values.description }}
+  annotations:
+    github.com/project-slug: ${{ values.orgName }}/${{ values.repoName }}
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - dotnet
+    - csharp
+    - webapi
+  links:
+    - url: https://github.com/${{ values.orgName }}/${{ values.repoName }}
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: ${{ values.owner }}
+  {%- if values.owner %}
+  system: backend-services
+  {%- endif %}

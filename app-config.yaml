@@ -106,6 +106,12 @@ catalog:
       rules:
         - allow: [Template]
 
+    # .NET Web API Template
+    - type: file
+      target: ../../examples/template/dotnet-webapi/template.yaml
+      rules:
+        - allow: [Template]
+
     # Local example organizational data
     - type: file
       target: ../../examples/org.yaml
