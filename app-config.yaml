@@ -12,6 +12,18 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
+  auth:
+    providers:
+      github:
+        development:
+          clientId: ${AUTH_GITHUB_CLIENT_ID}
+          clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+          signIn:
+            resolvers:
+              # Allows any GitHub user to sign in
+              # Creates a user identity based on GitHub username
+              - resolver: usernameMatchingUserEntityName
+
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -64,9 +76,15 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  session:
+    secret: ${AUTH_SESSION_SECRET}
   providers:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -76,7 +94,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Domain, Group, User]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
