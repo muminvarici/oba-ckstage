@@ -54,6 +54,7 @@ catalog/
 ## 🔗 Location Hiyerarşisi
 
 ### Seviye 1: Ana Giriş Noktası
+
 ```yaml
 # catalog/all.yaml
 - systems/all.yaml
@@ -62,6 +63,7 @@ catalog/
 ```
 
 ### Seviye 2: Kategori Düzeyi
+
 ```yaml
 # components/all.yaml
 - backend/all.yaml
@@ -70,6 +72,7 @@ catalog/
 ```
 
 ### Seviye 3: Servis Düzeyi
+
 ```yaml
 # backend/all.yaml
 - user-service.yaml
@@ -82,21 +85,25 @@ catalog/
 ## 🎯 Avantajlar
 
 ### 1. Modülerlik
+
 - Her kategori bağımsız yönetilebilir
 - Servisler kolayca eklenip çıkarılabilir
 - Değişiklikler izole edilebilir
 
 ### 2. Okunabilirlik
+
 - Açık ve anlaşılır hiyerarşi
 - Her all.yaml dosyası kendi kategorisini yönetir
 - Dokümantasyon kolay takip edilir
 
 ### 3. Bakım Kolaylığı
+
 - Yeni servis eklemek için sadece ilgili all.yaml güncellenir
 - Global değişiklik gerekmez
 - Conflict riski düşük
 
 ### 4. Ölçeklenebilirlik
+
 - Yeni kategoriler kolayca eklenebilir
 - Servis sayısı arttıkça yapı bozulmaz
 - Team bazlı yönetim mümkün
@@ -137,11 +144,13 @@ catalog:
 ### Backend Servis Ekleme
 
 1. Servis YAML dosyasını oluştur:
+
    ```bash
    touch examples/catalog/components/backend/new-service.yaml
    ```
 
 2. `backend/all.yaml` dosyasını güncelle:
+
    ```yaml
    ---
    apiVersion: backstage.io/v1alpha1
@@ -172,11 +181,11 @@ Her Location şu yapıyı kullanır:
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: unique-location-name           # Benzersiz isim
-  description: Human-readable desc      # Açıklama
+  name: unique-location-name # Benzersiz isim
+  description: Human-readable desc # Açıklama
 spec:
-  type: file                           # Location tipi
-  targets:                             # Hedef dosyalar
+  type: file # Location tipi
+  targets: # Hedef dosyalar
     - ./relative-path.yaml
 ```
 
@@ -185,6 +194,7 @@ spec:
 ### Mevcut Servisler
 
 **Backend (5):**
+
 - user-service
 - order-service
 - payment-service
@@ -192,16 +202,19 @@ spec:
 - analytics-service
 
 **Frontend (3):**
+
 - mobile-app
 - admin-dashboard
 - example-website
 
 **Infrastructure (3):**
+
 - api-gateway
 - message-queue
 - database-cluster
 
 **APIs (5):**
+
 - user-api (REST)
 - order-api (REST)
 - payment-api (REST)
@@ -209,23 +222,28 @@ spec:
 - example-grpc-api (gRPC)
 
 **Systems (1):**
+
 - examples (E-commerce Platform)
 
 ## 🏷️ Naming Convention
 
 ### Location Names
+
 Format: `{category}-{service-name}`
 
 Örnekler:
+
 - `backend-user-service`
 - `frontend-mobile-app`
 - `infrastructure-api-gateway`
 - `api-user-api`
 
 ### File Names
+
 Format: `{service-name}.yaml`
 
 Örnekler:
+
 - `user-service.yaml`
 - `mobile-app.yaml`
 - `api-gateway.yaml`

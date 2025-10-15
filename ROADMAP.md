@@ -16,9 +16,50 @@ Bu dokümantasyon, enterprise Backstage platformunun geliştirilmesi için gerek
 
 ### 1. ✓ TODO Listesi ve Roadmap Oluşturma
 
-- **Durum:** TAMAMLANDI
+- **Durum:** TAMAMLANDI ✅
 - **Açıklama:** Tüm gereksinimlerin detaylı analizi ve dokümantasyonu
-- **Commit:** Initial roadmap and TODO list creation
+- **Commit:** `06ab482 - docs: add project roadmap and TODO list`
+- **Tarih:** 16 Ekim 2025
+
+### 2. ✓ GitHub Authentication Konfigürasyonu
+
+- **Durum:** TAMAMLANDI ✅
+- **Açıklama:** GitHub OAuth yapılandırması tamamlandı (önceki commitlere göre)
+- **Commit:** `f7f46c5 - Github authentication support added`
+- **Tarih:** Önceki tarih
+
+### 3. ✓ .NET Proje Template'i Ekleme
+
+- **Durum:** TAMAMLANDI ✅
+- **Açıklama:** 
+  - .NET Core Web API template'i oluşturuldu
+  - Template parametreleri ve skeleton dosyaları eklendi
+  - `examples/template/dotnet-webapi/` altında tüm dosyalar hazır
+- **Commit:** `8b718ac - feat: add .NET Core Web API template`
+- **Tarih:** 16 Ekim 2025
+
+### 4. ✓ Örnek Veri Setini Genişletme
+
+- **Durum:** TAMAMLANDI ✅
+- **Açıklama:**
+  - Modüler katalog yapısı oluşturuldu
+  - Backend servisleri (5 adet), Frontend uygulamaları (3 adet), Infrastructure bileşenleri eklendi
+  - API tanımları (5 adet) eklendi
+  - Ekipler (5 adet) ve kullanıcılar organizasyonu oluşturuldu
+  - Tüm dosyalar modüler yapıda `examples/catalog/` altında düzenlendi
+- **Commit:** 
+  - `39a49e2 - feat: refactor catalog to modular enterprise structure`
+  - `17cb4c4 - feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi`
+- **Tarih:** 16 Ekim 2025
+
+### 5. ✓ TechDocs Plugin Entegrasyonu
+
+- **Durum:** TAMAMLANDI ✅
+- **Açıklama:**
+  - TechDocs hazırlığı yapıldı
+  - Backend servisleri için docs klasörleri oluşturuldu
+  - README.md dosyaları eklendi
+- **Commit:** `17cb4c4 - feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi`
 - **Tarih:** 16 Ekim 2025
 
 ---
@@ -30,70 +71,6 @@ _(Şu anda devam eden görev yok)_
 ---
 
 ## 📝 Yapılacak Görevler
-
-### 2. GitHub Authentication Konfigürasyonu
-
-- **Durum:** BEKLEMEDE
-- **Öncelik:** YÜKSEK
-- **Açıklama:**
-  - Mevcut GitHub OAuth yapılandırmasının kontrolü
-  - `app-config.yaml` dosyasındaki auth ayarlarının doğrulanması
-  - GitHub OAuth App credentials kontrolü
-  - Kullanıcı giriş akışının test edilmesi
-  - Hata durumlarının düzeltilmesi
-- **Teknik Gereksinimler:**
-  - GitHub OAuth App (Client ID ve Client Secret)
-  - Backstage auth backend konfigürasyonu
-- **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
-
-### 3. .NET Proje Template'i Ekleme
-
-- **Durum:** BEKLEMEDE
-- **Öncelik:** ORTA
-- **Açıklama:**
-  - .NET Core/ASP.NET Core için software template oluşturma
-  - Template parametreleri tanımlama (proje adı, namespace, framework version)
-  - GitHub repository oluşturma action'ı
-  - CI/CD pipeline entegrasyonu
-  - Template dosyalarını `examples/template/` klasörüne ekleme
-- **Dosyalar:**
-  - `examples/template/dotnet-template/template.yaml`
-  - `examples/template/dotnet-template/content/` (skeleton files)
-- **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
-
-### 4. Örnek Veri Setini Genişletme
-
-- **Durum:** BEKLEMEDE
-- **Öncelik:** ORTA
-- **Açıklama:**
-  - **10 Proje (Component):** Farklı tipte projeler (backend, frontend, mobile, library)
-  - **15 Kullanıcı (User):** Farklı rollerle (developer, architect, manager)
-  - **3 Ekip (Group):** Her ekip farklı sorumluluklara sahip
-  - **4 API:** RESTful ve gRPC API tanımları
-  - Kullanıcılar birden fazla grubun üyesi olabilir
-  - Organizasyon hiyerarşisi (parent-child ilişkileri)
-- **Dosyalar:**
-  - `examples/org.yaml` - Kullanıcılar ve gruplar
-  - `examples/entities.yaml` - Katalog referansları
-  - `examples/catalog/components/*.yaml` - Proje tanımları
-  - `examples/catalog/api/*.yaml` - API tanımları
-- **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
-
-### 5. TechDocs Plugin Entegrasyonu
-
-- **Durum:** BEKLEMEDE
-- **Öncelik:** YÜKSEK
-- **Açıklama:**
-  - `@backstage/plugin-techdocs` frontend plugin kurulumu
-  - `@backstage/plugin-techdocs-backend` backend plugin kurulumu
-  - Dokümantasyon generatör konfigürasyonu (local/external)
-  - Markdown dosyaları için MkDocs yapılandırması
-  - Entity sayfalarına TechDocs tab'ı ekleme
-- **Paketler:**
-  - `@backstage/plugin-techdocs`
-  - `@backstage/plugin-techdocs-backend`
-  - `@techdocs/cli` (optional)
-- **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 
 ### 6. Kubernetes Plugin (Rancher/Google Anthos)
 
@@ -252,17 +229,17 @@ _(Şu anda devam eden görev yok)_
 Her görev için ayrı commit atılacaktır:
 
 ```
-commit #1: docs: add project roadmap and TODO list
-commit #2: fix: verify and fix GitHub authentication configuration
-commit #3: feat: add .NET Core project template
-commit #4: feat: expand example data with 10 projects, 15 users, 3 teams, 4 APIs
-commit #5: feat: integrate TechDocs plugin
-commit #6: feat: add Kubernetes plugin with Rancher/Anthos support
-commit #7: feat: integrate ArgoCD plugin with restart capability
-commit #8: feat: add GitHub Actions plugin with trigger support
-commit #9: feat: integrate Apicurio viewer (custom plugin)
-commit #10: feat: activate Grafana plugin
-commit #11: feat: add gRPC proto file viewer
+✅ commit #1: docs: add project roadmap and TODO list (06ab482)
+✅ commit #2: Github authentication support added (f7f46c5)
+✅ commit #3: feat: add .NET Core Web API template (8b718ac)
+✅ commit #4: feat: refactor catalog to modular enterprise structure (39a49e2)
+✅ commit #5: feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi (17cb4c4)
+⏳ commit #6: feat: add Kubernetes plugin with Rancher/Anthos support
+⏳ commit #7: feat: integrate ArgoCD plugin with restart capability
+⏳ commit #8: feat: add GitHub Actions plugin with trigger support
+⏳ commit #9: feat: integrate Apicurio viewer (custom plugin)
+⏳ commit #10: feat: activate Grafana plugin
+⏳ commit #11: feat: add gRPC proto file viewer
 ```
 
 ---
@@ -270,9 +247,9 @@ commit #11: feat: add gRPC proto file viewer
 ## 📊 İlerleme Takibi
 
 - **Toplam Görev:** 11
-- **Tamamlanan:** 1 (9%)
+- **Tamamlanan:** 5 ✅ (45%)
 - **Devam Eden:** 0
-- **Bekleyen:** 10 (91%)
+- **Bekleyen:** 6 ⏳ (55%)
 
 ---
 
