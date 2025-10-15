@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: ic-uygulamalar
+  description: Kurum içi uygulamalar domaini
+spec:
+  owner: oba-team

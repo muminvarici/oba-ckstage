@@ -92,7 +92,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Domain, Group, User]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -109,6 +109,42 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+
+    # OBA Catalog - Domains
+    - type: file
+      target: ../../examples/catalog/domains/oba.yaml
+      rules:
+        - allow: [Domain]
+
+    # OBA Catalog - Groups - Users
+    - type: file
+      target: ../../examples/catalog/org.yaml
+      rules:
+        - allow: [Group, User]
+
+    # OBA Catalog - Systems
+    - type: file
+      target: ../../examples/catalog/systems/oba.yaml
+      rules:
+        - allow: [System]
+
+    # OBA Catalog - Components
+    - type: file
+      target: ../../examples/catalog/components/oba.yaml
+      rules:
+        - allow: [Component]
+
+    # OBA Catalog - APIs
+    - type: file
+      target: ../../examples/catalog/api/user.yaml
+      rules:
+        - allow: [API]
+
+    # OBA Catalog - Resources
+    - type: file
+      target: ../../examples/catalog/resources/oba.yaml
+      rules:
+        - allow: [Resource]
 
     ## Uncomment these lines to add more example data
     # - type: url

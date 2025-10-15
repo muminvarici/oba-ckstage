@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: oba-kullanici-servisi
+  description: OBA ekibine ait kullanıcı yönetim servisi
+  tags:
+    - oba
+    - servis
+spec:
+  type: service
+  lifecycle: production
+  owner: oba-team
+  system: oba-platform

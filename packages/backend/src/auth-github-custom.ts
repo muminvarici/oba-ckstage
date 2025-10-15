@@ -24,18 +24,20 @@ export default createBackendModule({
             authenticator: githubAuthenticator,
             async signInResolver(info, ctx) {
               const { profile } = info;
+              console.log('GitHub profile:', profile);
+              // Use GitHub username for matching catalog entities
+              // GitHub usernames are stable and unique
+              const username =
+                (profile as any).username || profile.email?.split('@')[0];
 
-              if (!profile.displayName) {
-                throw new Error(
-                  'GitHub profile does not contain a displayName',
-                );
+              if (!username) {
+                throw new Error('GitHub profile does not contain a username');
               }
 
-              // Create a user entity reference from the GitHub username
-              // This allows any GitHub user to sign in without pre-existing catalog entity
+              // Create a user entity reference from the GitHub username (lowercase)
               const userEntityRef = stringifyEntityRef({
                 kind: 'User',
-                name: profile.displayName.toLowerCase(),
+                name: username.toLowerCase(),
                 namespace: DEFAULT_NAMESPACE,
               });
 

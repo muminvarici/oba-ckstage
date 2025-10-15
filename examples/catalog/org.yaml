@@ -1,0 +1,39 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: oba-team
+  description: OBA ekibi
+spec:
+  type: team
+  profile:
+    displayName: OBA Ekibi
+  children: []
+  members:
+    - enes.bilik
+    - mvarici_archi
+
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: enes.bilik
+  description: OBA Ekibi Üyesi
+spec:
+  profile:
+    displayName: Enes Bilik
+    email: enes.bilik@example.com
+  memberOf: [oba-team]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+# GitHub username: mvarici_Archi (lowercase: mvarici_archi)
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: mvarici_archi
+  description: OBA Ekibi Üyesi
+spec:
+  profile:
+    displayName: Mümin Kadir Varıcı
+    email: mumin.varici@architecht.com
+  memberOf: [oba-team]

@@ -1,0 +1,35 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kullanici-api
+  description: Kullanıcı yönetimi için REST API
+spec:
+  type: openapi
+  lifecycle: production
+  owner: oba-team
+  system: oba-platform
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Kullanıcı API
+      version: 1.0.0
+      description: OBA Kullanıcı Yönetim API'si
+    paths:
+      /users:
+        get:
+          summary: Tüm kullanıcıları listele
+          responses:
+            '200':
+              description: Başarılı
+      /users/{id}:
+        get:
+          summary: Kullanıcı detayını getir
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            '200':
+              description: Başarılı
