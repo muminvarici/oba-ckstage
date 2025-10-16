@@ -3,17 +3,6 @@
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: mvarici_Archi
-  description: Software Architect
-spec:
-  profile:
-    displayName: Mümin Kadir Varici
-    email: mumin.varici@architecht.com
-  memberOf: [platform-team, backend-team]
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
   name: grace.platform
   description: DevOps Engineer
 spec:
