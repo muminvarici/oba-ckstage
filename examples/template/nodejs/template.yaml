@@ -2,9 +2,11 @@ apiVersion: scaffolder.backstage.io/v1beta3
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
 metadata:
-  name: example-nodejs-template
-  title: Example Node.js Template
-  description: An example template for the scaffolder that creates a simple Node.js service
+  name: nodejs-service-template
+  title: Node.js Service Template
+  description: Create a new Node.js service with owner selection
+  annotations:
+    backstage.io/managed-by-location: 'file:../../examples/template/nodejs/template.yaml'
 spec:
   owner: user:guest
   type: service
@@ -15,6 +17,7 @@ spec:
     - title: Fill in some steps
       required:
         - name
+        - owner
       properties:
         name:
           title: Name
@@ -23,6 +26,15 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: [Group, User]
+
     - title: Choose a location
       required:
         - repoUrl
@@ -43,9 +55,10 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./nodejs
+        url: ./content
         values:
           name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
 
     # This step publishes the contents of the working directory to GitHub.
     # If you or your organization prefer another default branch name over 'main'

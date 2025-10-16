@@ -5,6 +5,7 @@ metadata:
   description: Microservice for user management
   annotations:
     github.com/project-slug: example-org/user-service
+    github.com/workflows: ci.yml,deploy.yml
     backstage.io/techdocs-ref: dir:./docs/user-service
   tags:
     - backend

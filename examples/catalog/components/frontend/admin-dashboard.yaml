@@ -5,6 +5,7 @@ metadata:
   description: Administrative web dashboard built with React
   annotations:
     github.com/project-slug: example-org/admin-dashboard
+    github.com/workflows: ci.yml,build-deploy.yml
   tags:
     - frontend
     - web

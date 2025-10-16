@@ -37,11 +37,19 @@ backend:
     origin: http://localhost:3000
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
-  # This is for local development only, it is not recommended to use this in production
-  # The production database configuration is stored in app-config.production.yaml
+  # Database configuration - Using PostgreSQL for persistent data storage
   database:
-    client: better-sqlite3
-    connection: ':memory:'
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: backstage_plugin_catalog
+    # For better performance and connection pooling
+    pool:
+      min: 2
+      max: 10
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
@@ -49,6 +57,8 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
+      # Note: This token is also used by GitHub Actions plugin to fetch workflow runs and trigger workflows
+      # Required scopes: repo, workflow (for triggering workflows)
       token: ${GITHUB_TOKEN}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net

@@ -5,6 +5,7 @@ metadata:
   description: Order processing and management service
   annotations:
     github.com/project-slug: example-org/order-service
+    github.com/workflows: build.yml,test.yml,deploy.yml
     backstage.io/techdocs-ref: dir:./docs/order-service
   tags:
     - backend

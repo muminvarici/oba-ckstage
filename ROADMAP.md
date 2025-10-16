@@ -31,7 +31,7 @@ Bu dokümantasyon, enterprise Backstage platformunun geliştirilmesi için gerek
 ### 3. ✓ .NET Proje Template'i Ekleme
 
 - **Durum:** TAMAMLANDI ✅
-- **Açıklama:** 
+- **Açıklama:**
   - .NET Core Web API template'i oluşturuldu
   - Template parametreleri ve skeleton dosyaları eklendi
   - `examples/template/dotnet-webapi/` altında tüm dosyalar hazır
@@ -47,7 +47,7 @@ Bu dokümantasyon, enterprise Backstage platformunun geliştirilmesi için gerek
   - API tanımları (5 adet) eklendi
   - Ekipler (5 adet) ve kullanıcılar organizasyonu oluşturuldu
   - Tüm dosyalar modüler yapıda `examples/catalog/` altında düzenlendi
-- **Commit:** 
+- **Commit:**
   - `39a49e2 - feat: refactor catalog to modular enterprise structure`
   - `17cb4c4 - feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi`
 - **Tarih:** 16 Ekim 2025
@@ -62,6 +62,20 @@ Bu dokümantasyon, enterprise Backstage platformunun geliştirilmesi için gerek
 - **Commit:** `17cb4c4 - feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi`
 - **Tarih:** 16 Ekim 2025
 
+### 6. ✓ GitHub Actions Plugin
+
+- **Durum:** TAMAMLANDI ✅
+- **Açıklama:**
+  - `@backstage/plugin-github-actions` kurulumu yapıldı
+  - EntityPage.tsx'e GitHub Actions tab'ı eklendi
+  - GitHub entegrasyonu zaten mevcuttu (token ile)
+  - Örnek katalog entity'lerine workflow annotations eklendi
+  - Manuel workflow tetikleme özelliği kullanıma hazır
+- **Paketler:** `@backstage/plugin-github-actions@0.6.16`
+- **Commit:** `feat: add GitHub Actions plugin with trigger support`
+- **Tarih:** 16 Ekim 2025
+- **Not:** GitHub token'ın repo ve workflow scope'larına sahip olması gerekiyor
+
 ---
 
 ## 🔄 Devam Eden Görevler
@@ -72,7 +86,7 @@ _(Şu anda devam eden görev yok)_
 
 ## 📝 Yapılacak Görevler
 
-### 6. Kubernetes Plugin (Rancher/Google Anthos)
+### 7. Kubernetes Plugin (Rancher/Google Anthos)
 
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
@@ -89,7 +103,7 @@ _(Şu anda devam eden görev yok)_
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 - **Not:** Rancher ve Anthos API credentials gerekli
 
-### 7. ArgoCD Plugin Entegrasyonu
+### 8. ArgoCD Plugin Entegrasyonu
 
 - **Durum:** BEKLEMEDE
 - **Öncelik:** YÜKSEK
@@ -104,22 +118,6 @@ _(Şu anda devam eden görev yok)_
   - `@roadiehq/backstage-plugin-argo-cd-backend`
 - **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
 - **Not:** ArgoCD server URL ve authentication token gerekli
-
-### 8. GitHub Actions Plugin
-
-- **Durum:** BEKLEMEDE
-- **Öncelik:** YÜKSEK
-- **Açıklama:**
-  - `@backstage/plugin-github-actions` kurulumu
-  - GitHub API entegrasyonu (token ile)
-  - Workflow listesi görüntüleme
-  - Workflow çalıştırma geçmişi
-  - **Manuel workflow tetikleme özelliği**
-  - Entity sayfalarına GitHub Actions tab'ı ekleme
-- **Paketler:**
-  - `@backstage/plugin-github-actions`
-- **Teknik Durum:** ✅ TEKNİK OLARAK MÜMKÜN
-- **Not:** GitHub Personal Access Token (repo ve workflow yetkileri)
 
 ### 9. Apicurio Entegrasyonu
 
@@ -234,9 +232,9 @@ Her görev için ayrı commit atılacaktır:
 ✅ commit #3: feat: add .NET Core Web API template (8b718ac)
 ✅ commit #4: feat: refactor catalog to modular enterprise structure (39a49e2)
 ✅ commit #5: feat: Catalog yapısı tam modüler hale getirildi ve TechDocs eklendi (17cb4c4)
-⏳ commit #6: feat: add Kubernetes plugin with Rancher/Anthos support
-⏳ commit #7: feat: integrate ArgoCD plugin with restart capability
-⏳ commit #8: feat: add GitHub Actions plugin with trigger support
+✅ commit #6: feat: add GitHub Actions plugin with trigger support
+⏳ commit #7: feat: add Kubernetes plugin with Rancher/Anthos support
+⏳ commit #8: feat: integrate ArgoCD plugin with restart capability
 ⏳ commit #9: feat: integrate Apicurio viewer (custom plugin)
 ⏳ commit #10: feat: activate Grafana plugin
 ⏳ commit #11: feat: add gRPC proto file viewer
@@ -247,9 +245,9 @@ Her görev için ayrı commit atılacaktır:
 ## 📊 İlerleme Takibi
 
 - **Toplam Görev:** 11
-- **Tamamlanan:** 5 ✅ (45%)
+- **Tamamlanan:** 6 ✅ (55%)
 - **Devam Eden:** 0
-- **Bekleyen:** 6 ⏳ (55%)
+- **Bekleyen:** 5 ⏳ (45%)
 
 ---
 
