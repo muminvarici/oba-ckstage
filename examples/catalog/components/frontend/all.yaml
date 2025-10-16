@@ -1,0 +1,32 @@
+# Frontend Components - All frontend applications
+# This file aggregates all frontend component definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: frontend-mobile-app
+  description: React Native mobile application (iOS & Android)
+spec:
+  type: file
+  targets:
+    - ./mobile-app.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: frontend-admin-dashboard
+  description: Admin panel and dashboard application
+spec:
+  type: file
+  targets:
+    - ./admin-dashboard.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: frontend-example-website
+  description: Public-facing example website
+spec:
+  type: file
+  targets:
+    - ./example-website.yaml

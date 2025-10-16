@@ -54,3 +54,8 @@ e2e-test-report/
 
 # Cache
 .cache/
+
+# Local SQLite database
+backstage.db
+backstage.db-shm
+backstage.db-wal

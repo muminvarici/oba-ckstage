@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: example-grpc-api
+  description: Example gRPC API for demonstration
+  tags:
+    - grpc
+    - protobuf
+spec:
+  type: grpc
+  lifecycle: experimental
+  owner: backend-team
+  system: examples
+  definition: |
+    syntax = "proto3";
+
+    service Exampler {
+      rpc Example (ExampleMessage) returns (ExampleMessage) {};
+      rpc StreamExample (ExampleMessage) returns (stream ExampleMessage) {};
+    }
+
+    message ExampleMessage {
+      string example = 1;
+      int32 count = 2;
+      repeated string items = 3;
+    }

@@ -1,0 +1,22 @@
+site_name: 'Order Service Documentation'
+site_description: 'E-commerce order management and processing service'
+
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - Quick Start: getting-started/quickstart.md
+      - Configuration: getting-started/configuration.md
+  - Features:
+      - Order Processing: features/order-processing.md
+      - Payment Integration: features/payment-integration.md
+      - Inventory Management: features/inventory.md
+  - API:
+      - REST API: api/rest.md
+      - Webhooks: api/webhooks.md
+      - Events: api/events.md
+  - Operations:
+      - Monitoring: ops/monitoring.md
+      - Troubleshooting: ops/troubleshooting.md
+
+plugins:
+  - techdocs-core

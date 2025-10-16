@@ -1,0 +1,52 @@
+# APIs - All API definitions
+# This file aggregates all API component definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: api-user-api
+  description: User management REST API
+spec:
+  type: file
+  targets:
+    - ./user-api.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: api-order-api
+  description: Order processing REST API
+spec:
+  type: file
+  targets:
+    - ./order-api.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: api-payment-api
+  description: Payment processing REST API
+spec:
+  type: file
+  targets:
+    - ./payment-api.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: api-analytics-api
+  description: Analytics and reporting GraphQL API
+spec:
+  type: file
+  targets:
+    - ./analytics-api.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: api-example-grpc-api
+  description: Example gRPC API definition
+spec:
+  type: file
+  targets:
+    - ./example-grpc-api.yaml

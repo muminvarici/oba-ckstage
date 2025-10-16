@@ -1,8 +1,0 @@
-apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: oba-platform
-  description: OBA ekibine ait tüm uygulamaları kapsayan platform
-spec:
-  owner: oba-team
-  domain: ic-uygulamalar

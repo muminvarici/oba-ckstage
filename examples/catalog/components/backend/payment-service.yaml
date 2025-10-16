@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payment-service
+  description: Payment processing service with PCI compliance
+  annotations:
+    github.com/project-slug: example-org/payment-service
+    backstage.io/techdocs-ref: dir:./docs/payment-service
+  tags:
+    - backend
+    - microservice
+    - java
+    - rest-api
+    - pci-compliant
+  links:
+    - url: https://github.com/example-org/payment-service
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: production
+  owner: backend-team
+  system: examples
+  providesApis:
+    - payment-api
+  consumesApis:
+    - order-api
+    - user-api

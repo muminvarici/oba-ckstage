@@ -1,0 +1,63 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ${{ values.name | lower }}-api
+  description: API definition for ${{ values.name }}
+  annotations:
+    github.com/project-slug: ${{ values.orgName }}/${{ values.repoName }}
+  tags:
+    - rest
+    - openapi
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: ${{ values.owner }}
+  system: backend-services
+  definition:
+    openapi: 3.0.0
+    info:
+      title: ${{ values.name }} API
+      description: ${{ values.description }}
+      version: 1.0.0
+    servers:
+      - url: http://localhost:5000
+        description: Development server
+    paths:
+      /api/WeatherForecast:
+        get:
+          summary: Get weather forecast
+          description: Returns a list of weather forecasts for the next 5 days
+          operationId: getWeatherForecast
+          responses:
+            '200':
+              description: Successful response
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WeatherForecast'
+      {%- if values.enableHealthChecks %}
+      /health:
+        get:
+          summary: Health check
+          description: Returns the health status of the service
+          operationId: getHealth
+          responses:
+            '200':
+              description: Service is healthy
+      {%- endif %}
+    components:
+      schemas:
+        WeatherForecast:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            temperatureC:
+              type: integer
+            temperatureF:
+              type: integer
+            summary:
+              type: string

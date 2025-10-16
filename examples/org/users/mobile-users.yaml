@@ -1,0 +1,37 @@
+# Mobile Team Users
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jack.mobile
+  description: Senior Mobile Developer
+spec:
+  profile:
+    displayName: Jack Ryan
+    email: jack.ryan@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/jack.svg
+  memberOf: [mobile-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: kate.mobile
+  description: iOS Developer
+spec:
+  profile:
+    displayName: Kate Walsh
+    email: kate.walsh@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/kate.svg
+  memberOf: [mobile-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: luke.mobile
+  description: Android Developer
+spec:
+  profile:
+    displayName: Luke Skywalker
+    email: luke.skywalker@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/luke.svg
+  memberOf: [mobile-team]

@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: mobile-team
+  description: Mobile development team for iOS and Android applications
+  tags:
+    - mobile
+    - development
+    - ios
+    - android
+spec:
+  type: team
+  profile:
+    displayName: Mobile Team
+    email: mobile-team@company.com
+    picture: https://avatars.dicebear.com/api/identicon/mobile-team.svg
+  children: []

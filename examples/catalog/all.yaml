@@ -1,0 +1,31 @@
+# Catalog All - Import all catalog entities
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-systems
+  description: All example systems
+spec:
+  type: file
+  targets:
+    - ./systems/all.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-all-components
+  description: All components (backend, frontend, infrastructure)
+spec:
+  type: file
+  targets:
+    - ./components/all.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: example-apis
+  description: All APIs
+spec:
+  type: file
+  targets:
+    - ./apis/all.yaml

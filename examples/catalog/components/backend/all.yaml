@@ -1,0 +1,52 @@
+# Backend Components - All backend microservices
+# This file aggregates all backend service component definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: backend-user-service
+  description: User management microservice
+spec:
+  type: file
+  targets:
+    - ./user-service.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: backend-order-service
+  description: Order processing and management service
+spec:
+  type: file
+  targets:
+    - ./order-service.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: backend-payment-service
+  description: Payment processing service with PCI compliance
+spec:
+  type: file
+  targets:
+    - ./payment-service.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: backend-notification-service
+  description: Multi-channel notification service (Email, SMS, Push)
+spec:
+  type: file
+  targets:
+    - ./notification-service.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: backend-analytics-service
+  description: Data analytics and reporting service
+spec:
+  type: file
+  targets:
+    - ./analytics-service.yaml

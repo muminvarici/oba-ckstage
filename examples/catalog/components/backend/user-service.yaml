@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: user-service
+  description: Microservice for user management
+  annotations:
+    github.com/project-slug: example-org/user-service
+    github.com/workflows: ci.yml,deploy.yml
+    backstage.io/techdocs-ref: dir:./docs/user-service
+  tags:
+    - backend
+    - microservice
+    - nodejs
+    - rest-api
+  links:
+    - url: https://github.com/example-org/user-service
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: production
+  owner: backend-team
+  system: examples
+  providesApis:
+    - user-api

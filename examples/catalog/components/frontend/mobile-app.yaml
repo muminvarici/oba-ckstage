@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mobile-app
+  description: React Native mobile application for iOS and Android
+  annotations:
+    github.com/project-slug: example-org/mobile-app
+  tags:
+    - frontend
+    - mobile
+    - react-native
+    - ios
+    - android
+  links:
+    - url: https://github.com/example-org/mobile-app
+      title: GitHub Repository
+      icon: github
+    - url: https://apps.apple.com/app/example
+      title: App Store
+      icon: apple
+spec:
+  type: mobile-app
+  lifecycle: production
+  owner: mobile-team
+  system: examples
+  consumesApis:
+    - user-api
+    - order-api
+    - payment-api

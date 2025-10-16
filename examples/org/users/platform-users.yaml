@@ -1,0 +1,37 @@
+# Platform Team Users
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: grace.platform
+  description: DevOps Engineer
+spec:
+  profile:
+    displayName: Grace Hopper
+    email: grace.hopper@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/grace.svg
+  memberOf: [platform-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: henry.platform
+  description: Site Reliability Engineer
+spec:
+  profile:
+    displayName: Henry Ford
+    email: henry.ford@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/henry.svg
+  memberOf: [platform-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: iris.platform
+  description: Cloud Infrastructure Engineer
+spec:
+  profile:
+    displayName: Iris Chen
+    email: iris.chen@company.com
+    picture: https://avatars.dicebear.com/api/avataaars/iris.svg
+  memberOf: [platform-team, backend-team]

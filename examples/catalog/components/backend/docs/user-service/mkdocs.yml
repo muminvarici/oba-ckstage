@@ -1,0 +1,12 @@
+site_name: 'User Service Documentation'
+site_description: 'Technical documentation for User Management Microservice'
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - API Reference: api.md
+  - Development: development.md
+  - Deployment: deployment.md
+
+plugins:
+  - techdocs-core

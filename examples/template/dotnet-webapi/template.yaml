@@ -1,0 +1,145 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: dotnet-webapi-template
+  title: .NET Core Web API Template
+  description: Create a new .NET Core Web API project with best practices
+  tags:
+    - dotnet
+    - csharp
+    - webapi
+    - rest
+spec:
+  owner: group:platform-team
+  type: service
+
+  parameters:
+    - title: Project Information
+      required:
+        - name
+        - description
+        - owner
+      properties:
+        name:
+          title: Project Name
+          type: string
+          description: Unique name of the component (PascalCase recommended)
+          pattern: '^[A-Z][a-zA-Z0-9]*$'
+          ui:autofocus: true
+          ui:help: 'Example: OrderService, PaymentApi'
+        description:
+          title: Description
+          type: string
+          description: A brief description of your service
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: [Group, User]
+
+    - title: .NET Configuration
+      required:
+        - dotnetVersion
+      properties:
+        dotnetVersion:
+          title: .NET Version
+          type: string
+          description: Select the .NET version for your project
+          default: 'net8.0'
+          enum:
+            - 'net8.0'
+            - 'net7.0'
+            - 'net6.0'
+          enumNames:
+            - '.NET 8.0 (LTS)'
+            - '.NET 7.0'
+            - '.NET 6.0 (LTS)'
+        enableSwagger:
+          title: Enable Swagger/OpenAPI
+          type: boolean
+          description: Add Swagger UI for API documentation
+          default: true
+        enableHealthChecks:
+          title: Enable Health Checks
+          type: boolean
+          description: Add health check endpoints
+          default: true
+        enableDocker:
+          title: Enable Docker Support
+          type: boolean
+          description: Include Dockerfile and docker-compose
+          default: true
+
+    - title: Repository Configuration
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+            # allowedOwners: # enterprise için gerekirse diye
+            #   - your-organization
+        visibility:
+          title: Repository Visibility
+          type: string
+          description: Set repository visibility
+          default: internal
+          enum:
+            - public
+            - internal
+            - private
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base Template
+      action: fetch:template
+      input:
+        url: ./content
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner | default("user:guest") }}
+          dotnetVersion: ${{ parameters.dotnetVersion }}
+          enableSwagger: ${{ parameters.enableSwagger }}
+          enableHealthChecks: ${{ parameters.enableHealthChecks }}
+          enableDocker: ${{ parameters.enableDocker }}
+          repoUrl: ${{ parameters.repoUrl }}
+          orgName: ${{ (parameters.repoUrl | parseRepoUrl).owner }}
+          repoName: ${{ (parameters.repoUrl | parseRepoUrl).repo }}
+
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        description: ${{ parameters.description }}
+        repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: ${{ parameters.visibility }}
+        defaultBranch: main
+        protectDefaultBranch: false
+        gitAuthorName: Backstage Scaffolder
+        gitAuthorEmail: scaffolder@backstage.io
+
+    - id: register
+      name: Register Component
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in Catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
+      - title: View CI/CD Pipeline
+        icon: github
+        url: ${{ steps['publish'].output.remoteUrl }}/actions

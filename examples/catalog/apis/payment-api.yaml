@@ -1,0 +1,92 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: payment-api
+  description: RESTful API for payment processing with PCI compliance
+  tags:
+    - rest
+    - openapi
+    - payments
+    - pci-compliant
+spec:
+  type: openapi
+  lifecycle: production
+  owner: backend-team
+  system: examples
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Payment API
+      description: Secure payment processing API
+      version: 1.0.0
+    servers:
+      - url: https://api.example.com/v1
+        description: Production server
+    paths:
+      /payments:
+        post:
+          summary: Process a payment
+          operationId: processPayment
+          tags:
+            - payments
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/PaymentRequest'
+          responses:
+            '200':
+              description: Payment processed successfully
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/PaymentResponse'
+            '400':
+              description: Invalid payment request
+      /payments/{paymentId}:
+        get:
+          summary: Get payment status
+          operationId: getPayment
+          tags:
+            - payments
+          parameters:
+            - name: paymentId
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            '200':
+              description: Successful response
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/PaymentResponse'
+    components:
+      schemas:
+        PaymentRequest:
+          type: object
+          required:
+            - orderId
+            - amount
+            - currency
+          properties:
+            orderId:
+              type: string
+            amount:
+              type: number
+            currency:
+              type: string
+            paymentMethod:
+              type: string
+        PaymentResponse:
+          type: object
+          properties:
+            paymentId:
+              type: string
+            status:
+              type: string
+              enum: [pending, authorized, completed, failed]
+            transactionId:
+              type: string

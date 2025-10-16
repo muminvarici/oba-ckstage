@@ -1,0 +1,14 @@
+site_name: 'Notification Service'
+site_description: 'Multi-channel notification service'
+
+nav:
+  - Overview: index.md
+  - Channels:
+      - Email: channels/email.md
+      - SMS: channels/sms.md
+      - Push: channels/push.md
+  - Templates: templates.md
+  - Troubleshooting: troubleshooting.md
+
+plugins:
+  - techdocs-core

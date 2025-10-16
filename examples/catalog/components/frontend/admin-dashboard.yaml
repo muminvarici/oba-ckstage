@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: admin-dashboard
+  description: Administrative web dashboard built with React
+  annotations:
+    github.com/project-slug: example-org/admin-dashboard
+    github.com/workflows: ci.yml,build-deploy.yml
+  tags:
+    - frontend
+    - web
+    - react
+    - typescript
+    - admin
+  links:
+    - url: https://github.com/example-org/admin-dashboard
+      title: GitHub Repository
+      icon: github
+    - url: https://admin.example.com
+      title: Production URL
+      icon: web
+spec:
+  type: website
+  lifecycle: production
+  owner: frontend-team
+  system: examples
+  consumesApis:
+    - user-api
+    - order-api
+    - payment-api
+    - analytics-api

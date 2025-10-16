@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: notification-service
+  description: Email and SMS notification service
+  annotations:
+    github.com/project-slug: example-org/notification-service
+    backstage.io/techdocs-ref: dir:./docs/notification-service
+  tags:
+    - backend
+    - microservice
+    - python
+    - messaging
+  links:
+    - url: https://github.com/example-org/notification-service
+      title: GitHub Repository
+      icon: github
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: examples
+  dependsOn:
+    - resource:message-queue

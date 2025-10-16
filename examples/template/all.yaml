@@ -1,0 +1,22 @@
+# Templates All - Reference all templates
+# This file imports all template definitions
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: nodejs-template-location
+  description: Node.js template location
+spec:
+  type: file
+  targets:
+    - ./nodejs/template.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: dotnet-template-location
+  description: .NET Web API template location
+spec:
+  type: file
+  targets:
+    - ./dotnet-webapi/template.yaml
